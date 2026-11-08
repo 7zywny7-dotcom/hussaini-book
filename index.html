@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مجمع مصائب أهل البيت عليهم السلام</title>
+    <style>
+        :root {
+            --primary-color: #8B0000;
+            --secondary-color: #65000b;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --accent-color: #d4af37;
+        }
+        body {
+            font-family: 'Traditional Arabic', 'Amiri', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: var(--accent-color);
+        }
+        header p {
+            margin: 5px 0 0;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        .search-box {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .search-box:focus {
+            border-color: var(--primary-color);
+        }
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-right: 5px solid var(--primary-color);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 0.9rem;
+            border-top: 1px solid #ddd;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>مجمع مصائب أهل البيت عليهم السلام</h1>
+        <p>السلاف العطرة في رزايا العترة الطاهرة</p>
+    </header>
+
+    <div class="container">
+        <input type="text" id="searchInput" class="search-box" placeholder="ابحث في المصائب والأجزاء..." onkeyup="searchContent()">
+
+        <div id="contentList">
+            <div class="card" data-text="مصيبة الإمام علي أمير المؤمنين عليه السلام">
+                <h3>مصيبة مولنا الإمام علي بن أبي طالب (عليه السلام)</h3>
+                <p>إنا لله وإنا إليه راجعون، في شهر رمضان المبارك ليلة التاسع عشر ضربة الخوارج لإمام المتقين...</p>
+            </div>
+            
+            <div class="card" data-text="مصيبة سيد الشهداء الإمام الحسين يوم كربلاء عاشوراء">
+                <h3>مصيبة سيد الشهداء الإمام الحسين (عليه السلام)</h3>
+                <p>عاشوراء وكربلاء، مظلومية أبي عبد الله الحسين وأهل بيته الأطهار وأصحابه المنتجبين...</p>
+            </div>
+
+            <div class="card" data-text="مصيبة السيدة فاطمة الزهراء عليها السلام">
+                <h3>مصيبة سيدة نساء العالمين فاطمة الزهراء (عليها السلام)</h3>
+                <p>كسر الباب، وضمر المصرع، ومظلوميتها الكبرى في الدفاع عن ولاية أمير المؤمنين...</p>
+            </div>
+
+            <div class="card" data-text="مصيبة الإمام الحسن المجتبى عليه السلام بالسم">
+                <h3>مصيبة الإمام الحسن المجتبى (عليه السلام)</h3>
+                <p>مظلومية السبط الأكبر وما جرى عليه من السم الجؤاف وتكبد جراحات قلبه الشريف...</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        جميع الحقوق محفوظة لخدمة زوار أبي عبد الله الحسين عليه السلام
+    </footer>
+
+    <script>
+        function searchContent() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('card');
+            
+            for (let i = 0; i < cards.length; i++) {
+                let text = cards[i].getAttribute('data-text').toLowerCase();
+                if (text.includes(input)) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
